@@ -58,40 +58,78 @@ namespace Demo
 
         #region Q3)
 
-        public static void Main()
-        {
-            String s =Console.ReadLine();
-            Season S = (Season)Enum.Parse(typeof(Season), s, true);
+        //public static void Main()
+        //{
+        //    String s =Console.ReadLine();
+        //    Season S = (Season)Enum.Parse(typeof(Season), s, true);
 
-            switch (S)
+        //    switch (S)
+        //    {
+        //        case Season.Spring:
+        //            Console.WriteLine("march to may");
+        //        break;
+
+        //        case Season.Summer:
+        //            Console.WriteLine("june to august");
+        //        break;
+
+        //        case Season.Autumn:
+        //            Console.WriteLine("September to November");
+        //        break;
+
+        //        case Season.Winter:
+        //            Console.WriteLine("December to February");
+        //        break;
+
+        //    }
+        //}
+        //public enum Season
+        //{
+        //    Spring =1,
+        //    Summer =2,
+        //    Autumn =3,
+        //    Winter =4
+
+        //}
+
+
+        #endregion
+
+        #region Q4)
+        public static void Main() 
+        {
+            string C = Console.ReadLine();
+
+        
+            if (Enum.TryParse(typeof(Colors),C , true, out object result)) 
             {
-                case Season.Spring:
-                    Console.WriteLine("march to may");
-                break;
+                Colors color = (Colors)result;
 
-                case Season.Summer:
-                    Console.WriteLine("june to august");
-                break;
-
-                case Season.Autumn:
-                    Console.WriteLine("September to November");
-                break;
-
-                case Season.Winter:
-                    Console.WriteLine("December to February");
-                break;
-
+                if (color == Colors.Red || color == Colors.Green || color == Colors.Blue)
+                {
+                    Console.WriteLine($"{color} is Primary Color");
+                }
+                else 
+                {
+                Console.WriteLine($"{color} is not Primary Color");
+                }
+                
             }
+            else 
+            {
+
+                Console.WriteLine("invalid");
+             }
+
+
+
         }
-        public enum Season
+        public enum Colors 
         {
-            Spring =1,
-            Summer =2,
-            Autumn =3,
-            Winter =4
-
+            Red,
+           Green,
+           Blue
         }
-
 
         #endregion
     }
