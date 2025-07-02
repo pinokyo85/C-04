@@ -28,33 +28,71 @@ namespace Demo
 
         #region Q2)
 
-        private static void Main()
-        {
-            Person[] P = new Person[3];
-            P[0] = new Person("Mazen",20);
-            P[1] = new Person("Ashraf", 20);
-            P[2] = new Person("Omar", 20);
+        //private static void Main()
+        //{
+        //    Person[] P = new Person[3];
+        //    P[0] = new Person("Mazen",20);
+        //    P[1] = new Person("Ashraf", 20);
+        //    P[2] = new Person("Omar", 20);
 
-            foreach (Person p in P)
-            {
-                Console.WriteLine($"Name : {p.Name}  \nAge : {p.Age}");
-            }
-        }
-        public struct Person
-        {
-            public string Name;
-            public int Age;
+        //    foreach (Person p in P)
+        //    {
+        //        Console.WriteLine($"Name : {p.Name}  \nAge : {p.Age}");
+        //    }
+        //}
+        //public struct Person
+        //{
+        //    public string Name;
+        //    public int Age;
 
-            public Person(string name, int age) 
-            {
-                Name = name;
-                Age = age;
-            }
-        }
+        //    public Person(string name, int age) 
+        //    {
+        //        Name = name;
+        //        Age = age;
+        //    }
+        //}
 
 
 
         #endregion
 
+        #region Q3)
+
+        public static void Main()
+        {
+            String s =Console.ReadLine();
+            Season S = (Season)Enum.Parse(typeof(Season), s, true);
+
+            switch (S)
+            {
+                case Season.Spring:
+                    Console.WriteLine("march to may");
+                break;
+
+                case Season.Summer:
+                    Console.WriteLine("june to august");
+                break;
+
+                case Season.Autumn:
+                    Console.WriteLine("September to November");
+                break;
+
+                case Season.Winter:
+                    Console.WriteLine("December to February");
+                break;
+
+            }
+        }
+        public enum Season
+        {
+            Spring =1,
+            Summer =2,
+            Autumn =3,
+            Winter =4
+
+        }
+
+
+        #endregion
     }
 }
