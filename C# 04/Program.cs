@@ -96,39 +96,81 @@ namespace Demo
         #endregion
 
         #region Q4)
+        //public static void Main() 
+        //{
+        //    string C = Console.ReadLine();
+
+
+        //    if (Enum.TryParse(typeof(Colors),C , true, out object result)) 
+        //    {
+        //        Colors color = (Colors)result;
+
+        //        if (color == Colors.Red || color == Colors.Green || color == Colors.Blue)
+        //        {
+        //            Console.WriteLine($"{color} is Primary Color");
+        //        }
+        //        else 
+        //        {
+        //        Console.WriteLine($"{color} is not Primary Color");
+        //        }
+
+        //    }
+        //    else 
+        //    {
+
+        //        Console.WriteLine("invalid");
+        //     }
+
+
+
+        //}
+        //public enum Colors 
+        //{
+        //    Red,
+        //   Green,
+        //   Blue
+        //}
+
+        #endregion
+
+        #region Q5)
         public static void Main() 
         {
-            string C = Console.ReadLine();
+            Console.WriteLine("To Calc Distance between 2D Two Points");
+            Console.WriteLine("");
+            Console.WriteLine("enter x1");
+            double x1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("enter y1");
+            double y1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("enter x2");
+            double x2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("enter y2");
+            double y2 = double.Parse(Console.ReadLine());
 
-        
-            if (Enum.TryParse(typeof(Colors),C , true, out object result)) 
-            {
-                Colors color = (Colors)result;
+            Point Point1 = new Point (x1,y1);
+            Point Point2 = new Point(x2, y2);
 
-                if (color == Colors.Red || color == Colors.Green || color == Colors.Blue)
-                {
-                    Console.WriteLine($"{color} is Primary Color");
-                }
-                else 
-                {
-                Console.WriteLine($"{color} is not Primary Color");
-                }
-                
-            }
-            else 
-            {
+            double distance = Point1.calcdis(Point2);
 
-                Console.WriteLine("invalid");
-             }
-
-
-
+            Console.WriteLine($"Distance Between : ({Point1.X},{Point1.Y}) , ({Point2.X},{Point2.Y}) = {distance:f} ");
         }
-        public enum Colors 
+        public struct Point 
         {
-            Red,
-           Green,
-           Blue
+        
+            public double X;
+            public double Y;
+            public Point(double x, double y)
+            {
+                X = x;
+                Y = y;
+            }
+            public double  calcdis(Point OtherPoint) 
+            {
+                double clacX = OtherPoint.X - X;
+                double clacY = OtherPoint.Y - Y;
+               return Math.Sqrt(clacX * clacX + clacY * clacY);
+            }
+        
         }
 
         #endregion
