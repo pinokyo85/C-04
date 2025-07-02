@@ -134,44 +134,72 @@ namespace Demo
         #endregion
 
         #region Q5)
+        //public static void Main() 
+        //{
+        //    Console.WriteLine("To Calc Distance between 2D Two Points");
+        //    Console.WriteLine("");
+        //    Console.WriteLine("enter x1");
+        //    double x1 = double.Parse(Console.ReadLine());
+        //    Console.WriteLine("enter y1");
+        //    double y1 = double.Parse(Console.ReadLine());
+        //    Console.WriteLine("enter x2");
+        //    double x2 = double.Parse(Console.ReadLine());
+        //    Console.WriteLine("enter y2");
+        //    double y2 = double.Parse(Console.ReadLine());
+
+        //    Point Point1 = new Point (x1,y1);
+        //    Point Point2 = new Point(x2, y2);
+
+        //    double distance = Point1.calcdis(Point2);
+
+        //    Console.WriteLine($"Distance Between : ({Point1.X},{Point1.Y}) , ({Point2.X},{Point2.Y}) = {distance:f} ");
+        //}
+        //public struct Point 
+        //{
+
+        //    public double X;
+        //    public double Y;
+        //    public Point(double x, double y)
+        //    {
+        //        X = x;
+        //        Y = y;
+        //    }
+        //    public double  calcdis(Point OtherPoint) 
+        //    {
+        //        double clacX = OtherPoint.X - X;
+        //        double clacY = OtherPoint.Y - Y;
+        //       return Math.Sqrt(clacX * clacX + clacY * clacY);
+        //    }
+
+        //}
+
+        #endregion
+
+        #region Q6
         public static void Main() 
         {
-            Console.WriteLine("To Calc Distance between 2D Two Points");
-            Console.WriteLine("");
-            Console.WriteLine("enter x1");
-            double x1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("enter y1");
-            double y1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("enter x2");
-            double x2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("enter y2");
-            double y2 = double.Parse(Console.ReadLine());
+            Person[] person = new Person[3];
+            person[0] = new Person("Messi",37);
+            person[1] = new Person("Ronaldo", 40);
+            person[2] = new Person("Neymar", 35);
 
-            Point Point1 = new Point (x1,y1);
-            Point Point2 = new Point(x2, y2);
+            Person Oldperson = person.MaxBy(p => p.Age);
+            Console.WriteLine($"oldest Person : {Oldperson.Name} , His Age {Oldperson.Age}");
 
-            double distance = Point1.calcdis(Point2);
-
-            Console.WriteLine($"Distance Between : ({Point1.X},{Point1.Y}) , ({Point2.X},{Point2.Y}) = {distance:f} ");
         }
-        public struct Point 
+        public struct Person 
         {
-        
-            public double X;
-            public double Y;
-            public Point(double x, double y)
-            {
-                X = x;
-                Y = y;
+            public string Name;
+            public int Age;
+            public Person(string name, int age)
+            { 
+                this.Name = name;
+                this.Age = age;
             }
-            public double  calcdis(Point OtherPoint) 
-            {
-                double clacX = OtherPoint.X - X;
-                double clacY = OtherPoint.Y - Y;
-               return Math.Sqrt(clacX * clacX + clacY * clacY);
-            }
-        
+       
         }
+
+
 
         #endregion
     }
